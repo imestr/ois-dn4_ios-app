@@ -36,7 +36,7 @@
     health = [[HKHealthStore alloc]init];
     NSSet *types = [NSSet setWithObject:[HKQuantityType quantityTypeForIdentifier:HKQuantityTypeIdentifierStepCount]];
     
-    types = [NSSet setWithObjects:[HKQuantityType quantityTypeForIdentifier:HKQuantityTypeIdentifierStepCount],[HKQuantityType quantityTypeForIdentifier:HKQuantityTypeIdentifierOxygenSaturation],[HKQuantityType quantityTypeForIdentifier:HKQuantityTypeIdentifierHeight],[HKQuantityType quantityTypeForIdentifier:HKQuantityTypeIdentifierHeartRate],[HKQuantityType quantityTypeForIdentifier:HKQuantityTypeIdentifierBodyTemperature],[HKQuantityType quantityTypeForIdentifier:HKQuantityTypeIdentifierBodyMass],[HKQuantityType quantityTypeForIdentifier:HKQuantityTypeIdentifierBloodPressureDiastolic],[HKQuantityType quantityTypeForIdentifier:HKQuantityTypeIdentifierBloodPressureSystolic], nil];
+    types = [NSSet setWithObjects:[HKQuantityType quantityTypeForIdentifier:HKQuantityTypeIdentifierStepCount],[HKQuantityType quantityTypeForIdentifier:HKQuantityTypeIdentifierOxygenSaturation],[HKQuantityType quantityTypeForIdentifier:HKQuantityTypeIdentifierHeight],[HKQuantityType quantityTypeForIdentifier:HKQuantityTypeIdentifierHeartRate],[HKQuantityType quantityTypeForIdentifier:HKQuantityTypeIdentifierBodyTemperature],[HKQuantityType quantityTypeForIdentifier:HKQuantityTypeIdentifierBodyMass],[HKQuantityType quantityTypeForIdentifier:HKQuantityTypeIdentifierBloodPressureDiastolic],[HKQuantityType quantityTypeForIdentifier:HKQuantityTypeIdentifierBloodPressureSystolic],[HKQuantityType quantityTypeForIdentifier:HKQuantityTypeIdentifierHeartRate], nil];
     
     [health requestAuthorizationToShareTypes:nil readTypes:types completion:^(BOOL success, NSError *error) {
         if (success) {
@@ -125,6 +125,16 @@
         [health executeQuery:queryPressDia];
     }
     
+    if (_heartRateSwitch.on) {
+        HKSampleQuery *queryPressDia = [[HKSampleQuery alloc]initWithSampleType:[HKQuantityType quantityTypeForIdentifier:HKQuantityTypeIdentifierHeartRate] predicate:predicate limit:0 sortDescriptors:@[timeSortDescriptor] resultsHandler:^(HKSampleQuery *query, NSArray *results, NSError *error) {
+            //NSLog(@"RESULTS HeartRate: %@",results);
+            HKQuantitySample *sample = [results lastObject];
+            heartRate = [NSString stringWithFormat:@"%d",(int)([[sample quantity]doubleValueForUnit:[HKUnit unitFromString:@"count/s"]]*60)];
+            NSLog(@"RESULTS HeartRate: %@",heartRate);
+        }];
+        [health executeQuery:queryPressDia];
+    }
+    
     [self getSessionID];
 }
 
@@ -200,6 +210,7 @@
     [podatkiDict setObject:pressSys forKey:@"vital_signs/blood_pressure/any_event/systolic"];
     [podatkiDict setObject:pressDia forKey:@"vital_signs/blood_pressure/any_event/diastolic"];
     [podatkiDict setObject:oxySat forKey:@"vital_signs/indirect_oximetry:0/spo2|numerator"];
+    [podatkiDict setObject:heartRate forKey:@"vital_signs/pulse:0/any_event:0/rate|magnitude:pulse"];
     
     NSData *podatki = [NSJSONSerialization dataWithJSONObject:podatkiDict options:0 error:nil];
     

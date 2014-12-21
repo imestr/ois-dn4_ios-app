@@ -75,15 +75,6 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hQl-vF-XEr">
-                                <rect key="frame" x="279" y="515" width="42" height="21"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="xPC-bR-f5e"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Teža" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3BX-mB-rOt">
                                 <rect key="frame" x="255" y="209" width="35" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -93,12 +84,6 @@
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5Hh-py-Dfa">
                                 <rect key="frame" x="307" y="204" width="51" height="31"/>
                             </switch>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Temperatura" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="epC-CD-BMZ">
-                                <rect key="frame" x="194" y="248" width="96" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TzF-km-CDz">
                                 <rect key="frame" x="307" y="243" width="51" height="31"/>
                             </switch>
@@ -138,6 +123,15 @@
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eRS-n5-adY">
                                 <rect key="frame" x="307" y="399" width="51" height="31"/>
                             </switch>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hQl-vF-XEr">
+                                <rect key="frame" x="279" y="515" width="42" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="xPC-bR-f5e"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Koraki" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Tk-P0-QZR">
                                 <rect key="frame" x="241" y="443" width="49" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -147,9 +141,16 @@
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BjZ-jU-LcJ">
                                 <rect key="frame" x="307" y="438" width="51" height="31"/>
                             </switch>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Temp." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="epC-CD-BMZ">
+                                <rect key="frame" x="243" y="248" width="47" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="epC-CD-BMZ" firstAttribute="centerY" secondItem="TzF-km-CDz" secondAttribute="centerY" id="23H-Jt-twf"/>
                             <constraint firstItem="epC-CD-BMZ" firstAttribute="centerY" secondItem="TzF-km-CDz" secondAttribute="centerY" id="3yk-nj-luM"/>
                             <constraint firstItem="Y3V-wx-rvP" firstAttribute="top" secondItem="MrK-aN-Ogm" secondAttribute="bottom" constant="3" id="4TF-YO-uFI"/>
                             <constraint firstItem="0IC-ow-xxA" firstAttribute="trailing" secondItem="epC-CD-BMZ" secondAttribute="trailing" id="4hk-Iz-Eeo"/>
@@ -172,11 +173,13 @@
                             <constraint firstItem="aPJ-Y0-VBM" firstAttribute="top" secondItem="0IC-ow-xxA" secondAttribute="bottom" constant="15" id="KEp-nB-hLp"/>
                             <constraint firstItem="hSW-OR-oVO" firstAttribute="leading" secondItem="FfL-lw-YNW" secondAttribute="trailing" constant="17" id="Mqq-Bu-3fV"/>
                             <constraint firstItem="FfL-lw-YNW" firstAttribute="trailing" secondItem="3BX-mB-rOt" secondAttribute="trailing" id="Or3-mA-Erc"/>
+                            <constraint firstItem="0IC-ow-xxA" firstAttribute="trailing" secondItem="epC-CD-BMZ" secondAttribute="trailing" id="P9r-B4-kVF"/>
                             <constraint firstItem="rtL-D8-mIh" firstAttribute="centerX" secondItem="Y3V-wx-rvP" secondAttribute="centerX" id="QlC-ig-vPS"/>
                             <constraint firstItem="6Tk-P0-QZR" firstAttribute="centerY" secondItem="BjZ-jU-LcJ" secondAttribute="centerY" id="RKG-As-V2W"/>
                             <constraint firstItem="TzF-km-CDz" firstAttribute="top" secondItem="5Hh-py-Dfa" secondAttribute="bottom" constant="8" symbolic="YES" id="Rgf-2b-sEg"/>
                             <constraint firstItem="Y3V-wx-rvP" firstAttribute="centerX" secondItem="MrK-aN-Ogm" secondAttribute="centerX" id="VoW-H8-ScH"/>
                             <constraint firstItem="epC-CD-BMZ" firstAttribute="trailing" secondItem="3BX-mB-rOt" secondAttribute="trailing" id="Wg9-1L-Ubx"/>
+                            <constraint firstItem="epC-CD-BMZ" firstAttribute="trailing" secondItem="3BX-mB-rOt" secondAttribute="trailing" id="XN2-G6-eNN"/>
                             <constraint firstItem="hQl-vF-XEr" firstAttribute="top" secondItem="6PJ-8s-21v" secondAttribute="bottom" constant="8" symbolic="YES" id="YBz-DG-YnG"/>
                             <constraint firstItem="kxH-fH-6v6" firstAttribute="leading" secondItem="QKg-gU-m1y" secondAttribute="leading" id="Z2U-fs-wsa"/>
                             <constraint firstItem="RMp-4M-JIN" firstAttribute="trailing" secondItem="aPJ-Y0-VBM" secondAttribute="trailing" id="ZTG-zS-JDm"/>
@@ -204,6 +207,14 @@
                             <constraint firstAttribute="centerX" secondItem="TzF-km-CDz" secondAttribute="centerX" constant="-31.5" id="xp5-uU-Zqb"/>
                             <constraint firstAttribute="centerX" secondItem="ujO-nF-1AH" secondAttribute="centerX" constant="-31.5" id="z24-s9-wZi"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="3yk-nj-luM"/>
+                                <exclude reference="DFb-qD-iTc"/>
+                                <exclude reference="Wg9-1L-Ubx"/>
+                                <exclude reference="4hk-Iz-Eeo"/>
+                            </mask>
+                        </variation>
                     </view>
                     <tabBarItem key="tabBarItem" title="Nastavitve" image="second" id="cPa-gy-q4n"/>
                     <connections>
