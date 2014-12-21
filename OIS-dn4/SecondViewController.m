@@ -36,7 +36,7 @@
     health = [[HKHealthStore alloc]init];
     NSSet *types = [NSSet setWithObject:[HKQuantityType quantityTypeForIdentifier:HKQuantityTypeIdentifierStepCount]];
     
-    types = [NSSet setWithObjects:[HKQuantityType quantityTypeForIdentifier:HKQuantityTypeIdentifierStepCount],[HKQuantityType quantityTypeForIdentifier:HKQuantityTypeIdentifierOxygenSaturation],[HKQuantityType quantityTypeForIdentifier:HKQuantityTypeIdentifierHeight],[HKQuantityType quantityTypeForIdentifier:HKQuantityTypeIdentifierHeartRate],[HKQuantityType quantityTypeForIdentifier:HKQuantityTypeIdentifierBodyTemperature],[HKQuantityType quantityTypeForIdentifier:HKQuantityTypeIdentifierBodyMass],[HKQuantityType quantityTypeForIdentifier:HKQuantityTypeIdentifierBloodPressureDiastolic],[HKQuantityType quantityTypeForIdentifier:HKQuantityTypeIdentifierBloodPressureSystolic],[HKQuantityType quantityTypeForIdentifier:HKQuantityTypeIdentifierHeartRate], nil];
+    types = [NSSet setWithObjects:[HKQuantityType quantityTypeForIdentifier:HKQuantityTypeIdentifierStepCount],[HKQuantityType quantityTypeForIdentifier:HKQuantityTypeIdentifierOxygenSaturation],[HKQuantityType quantityTypeForIdentifier:HKQuantityTypeIdentifierHeight],[HKQuantityType quantityTypeForIdentifier:HKQuantityTypeIdentifierHeartRate],[HKQuantityType quantityTypeForIdentifier:HKQuantityTypeIdentifierBodyTemperature],[HKQuantityType quantityTypeForIdentifier:HKQuantityTypeIdentifierBodyMass],[HKQuantityType quantityTypeForIdentifier:HKQuantityTypeIdentifierBloodPressureDiastolic],[HKQuantityType quantityTypeForIdentifier:HKQuantityTypeIdentifierBloodPressureSystolic], nil];
     
     [health requestAuthorizationToShareTypes:nil readTypes:types completion:^(BOOL success, NSError *error) {
         if (success) {
